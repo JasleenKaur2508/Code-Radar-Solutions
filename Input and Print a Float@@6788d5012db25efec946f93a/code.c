@@ -1,5 +1,5 @@
 #include <stdio.h>
-float main()
+int main()
 {
     float a;
     scanf("enter floating value : " .2f% , &a);
