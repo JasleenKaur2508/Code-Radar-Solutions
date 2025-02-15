@@ -3,6 +3,6 @@ int main() {
     int num1 , num2 , greater ;
     scanf("%d %d", &num1, &num2);
     greater = num1 > num2 ;
-    printf("%c", greater);
+    printf("%b", greater);
     return 0;
 }
