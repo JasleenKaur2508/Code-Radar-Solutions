@@ -1,8 +1,8 @@
 #include <stdio.h>
-int main() {
+bool main() {
     bool num1 , num2 , greater ;
     scanf("%d %d", &num1, &num2);
     greater = num1 > num2 ;
-    printf("%s", greater);
+    printf("%c", greater);
     return 0;
 }
