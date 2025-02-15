@@ -1,6 +1,6 @@
 #include <stdio.h>
 #define pi = 3.14
-float main() 
+int main() 
 {
     float radius , area ; 
     scanf("%f", &radius);
