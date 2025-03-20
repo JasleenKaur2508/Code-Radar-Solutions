@@ -1,4 +1,5 @@
 #include<stdio.h>
+#define INT_BITS 32
 int main(){
     unsigned int num1;
     scanf("%u", &num1);
