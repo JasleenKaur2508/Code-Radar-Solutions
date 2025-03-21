@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+// Function to perform selection sort
 void selectionSort(int arr[], int n) {
     int i, j, min_idx, temp;
 
@@ -15,6 +16,14 @@ void selectionSort(int arr[], int n) {
         arr[min_idx] = arr[i];
         arr[i] = temp;
     }
+}
+
+// Function to print the array
+void printArray(int arr[], int n) {
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n"); // Add a newline at the end
 }
 
 int main() {
@@ -33,11 +42,8 @@ int main() {
     // Call the selectionSort function
     selectionSort(arr, n);
 
-    // Print the sorted array
-    for (int i = 0; i < n; i++) {
-        printf("%d ", arr[i]);
-    }
-    printf("\n"); // Add a newline at the end
+    // Call the printArray function to print the sorted array
+    printArray(arr, n);
 
     return 0;
 }
