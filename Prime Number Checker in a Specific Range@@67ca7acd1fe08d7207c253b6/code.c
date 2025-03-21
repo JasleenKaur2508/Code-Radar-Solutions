@@ -1,19 +1,12 @@
 #include<stdio.h>
-void printPrimesInRange(int a, int b) {
-    int hasPrimes = 0; // Flag to check if any prime numbers exist
-
-    for (int i = a; i <= b; i++) {
-        if (isPrime(i)) {
-            printf("%d ", i);
-            hasPrimes = 1; // Prime found, update flag
-        }
+// Function to check if a number is prime
+int isPrime(int num) {
+    if (num <= 1) return 0; // Numbers less than or equal to 1 are not prime
+    for (int i = 2; i * i <= num; i++) { // Check divisors up to sqrt(num)
+        if (num % i == 0) return 0; // Number is not prime
     }
-
-    if (!hasPrimes) {
-        printf("No prime numbers\n");
-    } else {
-        printf("\n"); // Newline after printing primes
-    }
+    return 1; // Number is prime
 }
+
 
 
