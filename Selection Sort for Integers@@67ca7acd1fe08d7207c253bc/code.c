@@ -1,33 +1,23 @@
-#include <stdio.h>
-
-// Function to perform selection sort
+// Function to sort an array using selection sort
 void selectionSort(int arr[], int n) {
-    // ... (Your selection sort implementation here) ...
-}
-
-// Function to print the array
-void printArray(int arr[], int n) {
-    // ... (Your print array implementation here) ...
-}
-
-int main() { // Only ONE main function
-    int n;
-
-    // Read the number of integers
-    scanf("%d", &n);
-
-    int arr[n];
-
-    // Read the integers from input
-    for (int i = 0; i < n; i++) {
-        scanf("%d", &arr[i]);
+    for (int i = 0; i < n - 1; i++) {
+        int minIndex = i;
+        for (int j = i + 1; j < n; j++) {
+            if (arr[j] < arr[minIndex]) {
+                minIndex = j;
+            }
+        }
+        // Swap the found minimum element with the first element
+        int temp = arr[minIndex];
+        arr[minIndex] = arr[i];
+        arr[i] = temp;
     }
+}
 
-    // Call the selectionSort function
-    selectionSort(arr, n);
-
-    // Call the printArray function to print the sorted array
-    printArray(arr, n);
-
-    return 0;
+// Function to print an array
+void printArray(int arr[], int n) {
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
 }
