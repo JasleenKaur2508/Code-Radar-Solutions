@@ -7,7 +7,7 @@ void selectionSort(char arr[][100], int n) {
                 minIndex = j;
             }
         }
-        // Swap the found minimum string with the first string
+        // Swap the strings
         char temp[100];
         strcpy(temp, arr[minIndex]);
         strcpy(arr[minIndex], arr[i]);
@@ -21,3 +21,4 @@ void printArray(char arr[][100], int n) {
         printf("%s\n", arr[i]);
     }
 }
+
