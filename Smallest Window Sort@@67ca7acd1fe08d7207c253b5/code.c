@@ -32,7 +32,6 @@ int findUnsortedSubarrayLength(int arr[], int n) {
     return end - start + 1;
 }
 
-int main() {
     int t;
     scanf("%d", &t);
     while (t--) {
@@ -45,4 +44,4 @@ int main() {
         printf("%d\n", findUnsortedSubarrayLength(arr, n));
     }
     return 0;
-}
+    
