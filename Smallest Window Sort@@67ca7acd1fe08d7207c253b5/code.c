@@ -1,13 +1,14 @@
-#include <stdio.h>
-
-int findUnsortedSubarrayLength(int arr[], int n) {
+int findUnsortedSubarray(int arr[], int n) {
     int start = -1, end = -1;
-    // Finding the initial boundaries
     for (int i = 0; i < n - 1; i++) {
         if (arr[i] > arr[i + 1]) {
             start = i;
             break;
         }
+    }
+    if (start == -1) {
+        // The array is already sorted
+        return 0;
     }
     for (int i = n - 1; i > 0; i--) {
         if (arr[i] < arr[i - 1]) {
@@ -15,33 +16,28 @@ int findUnsortedSubarrayLength(int arr[], int n) {
             break;
         }
     }
-    // If the array is already sorted
-    if (start == -1) return 0;
-
-    // Finding the min and max in the unsorted subarray
+    
+    // Find the min and max in the unsorted portion
     int minVal = arr[start], maxVal = arr[start];
     for (int i = start; i <= end; i++) {
         if (arr[i] < minVal) minVal = arr[i];
         if (arr[i] > maxVal) maxVal = arr[i];
     }
-
-    // Expanding the boundaries
-    while (start > 0 && arr[start - 1] > minVal) start--;
-    while (end < n - 1 && arr[end + 1] < maxVal) end++;
-
+    
+    // Expand the range if needed
+    for (int i = 0; i < start; i++) {
+        if (arr[i] > minVal) {
+            start = i;
+            break;
+        }
+    }
+    for (int i = n - 1; i > end; i--) {
+        if (arr[i] < maxVal) {
+            end = i;
+            break;
+        }
+    }
+    
     return end - start + 1;
 }
 
-    int t;
-    scanf("%d", &t);
-    while (t--) {
-        int n;
-        scanf("%d", &n);
-        int arr[n];
-        for (int i = 0; i < n; i++) {
-            scanf("%d", &arr[i]);
-        }
-        printf("%d\n", findUnsortedSubarrayLength(arr, n));
-    }
-    return 0;
-    
