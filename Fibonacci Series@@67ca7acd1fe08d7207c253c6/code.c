@@ -1,17 +1,21 @@
 #include<stdio.h>
-// Function to generate the Fibonacci series
-void fibonacciSeries(int n) {
-    int first = 0, second = 1, next;
-
-    for (int i = 0; i < n; i++) {
-        if (i <= 1) {
-            next = i;
-        } else {
-            next = first + second;
-            first = second;
-            second = next;
-        }
-        printf("%d ", next);
+void fib(int n, int n1, int n2){
+    int n3;
+    if(n>0){
+        n3=n1+n2;
+        printf("%d",n3);
+        fib(n-1,n2,n3);
     }
-    printf("\n");
+}
+int main(){
+    int n;
+    scanf("%d",&n);
+    if(n>=1){
+        printf("0");
+    }
+    if(n>=2){
+        printf("1");
+    }
+    fib(n-2,0,1);
+    return 0;
 }
